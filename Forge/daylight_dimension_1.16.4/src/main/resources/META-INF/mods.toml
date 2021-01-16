@@ -26,7 +26,7 @@ SOFTWARE.
 issueTrackerURL="https://github.com/Dunkmania101/DaylightDimension/issues" #optional
 [[mods]] #mandatory
 modId="daylightdimension" #mandatory
-version="0.0.1" #mandatory
+version="0.0.2" #mandatory
 displayName="Daylight Dimension" #mandatory
 #updateJSONURL="http://myurl.me/" #optional
 displayURL="https://www.curseforge.com/minecraft/mc-mods/daylight-dimension-forge" #optional

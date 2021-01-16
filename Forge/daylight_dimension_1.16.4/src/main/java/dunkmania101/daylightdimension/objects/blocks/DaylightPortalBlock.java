@@ -25,7 +25,7 @@ public class DaylightPortalBlock extends Block {
                 MinecraftServer server = worldIn.getServer();
                 if (server != null) {
                     if (worldIn.getDimensionKey() == DaylightDimension.DAYLIGHT_DIMENSION) {
-                        ServerWorld overWorld = worldIn.getServer().getWorld(World.OVERWORLD);
+                        ServerWorld overWorld = server.getWorld(World.OVERWORLD);
                         if (overWorld != null) {
                             player.changeDimension(overWorld, new DaylightTeleporter(pos, false));
                         }

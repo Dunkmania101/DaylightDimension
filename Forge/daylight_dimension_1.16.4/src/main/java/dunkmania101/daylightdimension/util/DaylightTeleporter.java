@@ -1,6 +1,7 @@
 package dunkmania101.daylightdimension.util;
 
 import dunkmania101.daylightdimension.init.BlockInit;
+import dunkmania101.daylightdimension.objects.blocks.DaylightPortalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluids;
@@ -21,7 +22,7 @@ public class DaylightTeleporter implements ITeleporter {
 
     @Override
     public Entity placeEntity(Entity entity, ServerWorld currentWorld, ServerWorld destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
-        entity = repositionEntity.apply(true);
+        entity = repositionEntity.apply(false);
         double y = 61;
         if (!thisIsToDaylightDim) {
             y = thisPos.getY();
@@ -36,7 +37,16 @@ public class DaylightTeleporter implements ITeleporter {
         }
         entity.setPositionAndUpdate(destPos.getX(), destPos.getY(), destPos.getZ());
         if (thisIsToDaylightDim) {
-            destWorld.setBlockState(destPos, BlockInit.DAYLIGHT_PORTAL.get().getDefaultState());
+            boolean doSetBlock = true;
+            for (BlockPos checkPos : BlockPos.getAllInBoxMutable(destPos.down(10).west(10), destPos.up(10).east(10))) {
+                if (destWorld.getBlockState(checkPos).getBlock() instanceof DaylightPortalBlock) {
+                    doSetBlock = false;
+                    break;
+                }
+            }
+            if (doSetBlock) {
+                destWorld.setBlockState(destPos, BlockInit.DAYLIGHT_PORTAL.get().getDefaultState());
+            }
         }
         return entity;
     }
