@@ -15,7 +15,7 @@ apply plugin: 'maven-publish'
 
 version = '0.0.3'
 group = 'dunkmania101.daylightdimension' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'daylightdimension_forge_1.16.4'
+archivesBaseName = 'daylightdimension_1.16.5'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -44,7 +44,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                daylightdimension {
                     source sourceSets.main
                 }
             }
@@ -60,7 +60,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                daylightdimension {
                     source sourceSets.main
                 }
             }
@@ -79,7 +79,7 @@ minecraft {
             args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                examplemod {
+                daylightdimension {
                     source sourceSets.main
                 }
             }
@@ -94,7 +94,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.16.4-35.1.37'
+    minecraft 'net.minecraftforge:forge:1.16.5-36.1.2'
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
@@ -120,13 +120,13 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "examplemod",
-            "Specification-Vendor": "examplemodsareus",
+            "Specification-Title": "daylightdimension",
+            "Specification-Vendor": "daylightdimension",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+            "Implementation-Vendor" :"daylightdimension",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
         ])
     }
 }

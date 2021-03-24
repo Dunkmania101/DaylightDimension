@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "cbc",
+    "bab",
+    "cbc"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:ender_eye"
+    },
+    "b": {
+      "item": "minecraft:blaze_rod"
+    },
+    "c": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "daylightdimension:daylight_portal"
+  }
+}
