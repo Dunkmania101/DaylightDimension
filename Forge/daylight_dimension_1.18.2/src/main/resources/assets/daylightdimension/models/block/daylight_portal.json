@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "daylightdimension:blocks/daylight_portal_block"
+  }
+}
