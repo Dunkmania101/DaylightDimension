@@ -29,6 +29,6 @@ public class DaylightDimension {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        DAYLIGHT_DIMENSION = ResourceKey.create(Registry.DIMENSION_REGISTRY, ResourceLocation.fromNamespaceAndPath(modid, "daylight_dimension"));
+        DAYLIGHT_DIMENSION = ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(modid, "daylight_dimension"));
     }
 }
